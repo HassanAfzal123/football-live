@@ -1,5 +1,5 @@
 describe('Add a new game', () => {
-    it('Displays the message in the list', () => {
+    it('check add game featue', () => {
         cy.visit('http://localhost:3000');
 
         cy.get('[data-testid="homeTeam"]')
