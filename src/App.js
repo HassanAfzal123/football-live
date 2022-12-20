@@ -10,9 +10,6 @@ const App = () => {
     setScoreBoard([newGame, ...scoreboard])
   }
 
-  const printAAS = () => {
-    console.log("HELLLLLLLLLLLLOOOOOOOOOOOOOOO")
-  }
   //Rendering JSX
   return (
     <>
