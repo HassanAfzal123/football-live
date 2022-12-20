@@ -13,6 +13,7 @@ const App = () => {
   //Rendering JSX
   return (
     <>
+      <center><h1>Live Football World Cup Score Board</h1></center>
       <NewGameForm updateScoreBoard={updateScoreBoard}/>
       <div>
         {scoreboard.map((gameScore,i) => {

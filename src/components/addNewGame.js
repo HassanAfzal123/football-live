@@ -28,12 +28,14 @@ const NewGameForm = ({updateScoreBoard}) => {
     //Render
     return (
         <>
+            <h3>Add New Game</h3>
             <input
                 type="text"
                 data-testid="homeTeam"
                 name="homeTeam"
                 value={homeTeam}
                 onChange={handleTextChange}
+                placeholder={"Home Team Name"}
             />
             <input
                 type="text"
@@ -41,12 +43,13 @@ const NewGameForm = ({updateScoreBoard}) => {
                 name="awayTeam"
                 value={awayTeam}
                 onChange={handleTextChange}
+                placeholder={"Away Team Name"}
             />
             <button
                 data-testid="submitGame"
                 onClick={handleSubmit}
             >
-                Send
+                Add Game
             </button>
         </>
     );
