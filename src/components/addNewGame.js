@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const NewGameForm = ({updateScoreBoard}) => {
+const NewGameForm = ({scoreboard,updateScoreBoard}) => {
     //State Variables
     const [homeTeam, setHomeTeam] = useState('');
     const [awayTeam, setAwayTeam] = useState('');
@@ -15,6 +15,7 @@ const NewGameForm = ({updateScoreBoard}) => {
 
     const handleSubmit = () => {
         let game = {
+            'id': Math.max(...scoreboard.map(obj => obj.id))+1,
             'homeTeam': homeTeam,
             'homeTeamScore': 0,
             'awayTeam': awayTeam,

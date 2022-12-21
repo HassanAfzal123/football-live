@@ -6,9 +6,9 @@ import Scoreboard from './Scoreboard';
 describe('<Scoreboard />', () => {
 
     var scoreboard = [
-        {homeTeam: 'France', homeTeamScore: '2', awayTeam: 'Spain', awayTeamScore: '3'},
-        {homeTeam: 'Portugal', homeTeamScore: '0', awayTeam: 'Argentina', awayTeamScore: '0'},
-        {homeTeam: 'Qatar', homeTeamScore: '2', awayTeam: 'Belgium', awayTeamScore: '1'},
+        {id: 0, homeTeam: 'France', homeTeamScore: '2', awayTeam: 'Spain', awayTeamScore: '3'},
+        {id: 1, homeTeam: 'Portugal', homeTeamScore: '0', awayTeam: 'Argentina', awayTeamScore: '0'},
+        {id: 2, homeTeam: 'Qatar', homeTeamScore: '2', awayTeam: 'Belgium', awayTeamScore: '1'},
     ]
 
     // Only clicking the edit button and checking all edge cases

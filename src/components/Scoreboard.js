@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 const Scoreboard = ({scoreboard, setScoreBoard}) => {
-    //State Variables
+    //State Variables Hooks
     const [editGame, setEditGame] = useState(0)
     const [newHomeTeamScore, setNewHomeTeamScore] = useState('')
     const [newAwayTeamScore, setNewAwayTeamScore] = useState('')
@@ -23,7 +23,7 @@ const Scoreboard = ({scoreboard, setScoreBoard}) => {
 
     const saveGame = (gameId) => {
 
-        if(parseInt(newHomeTeamScore) && parseInt(newAwayTeamScore)) {
+        if(( parseInt(newHomeTeamScore) || newHomeTeamScore === 0 ) && ( parseInt(newAwayTeamScore) || newAwayTeamScore === 0 )) {
             const updatedScoreBoard = scoreboard.map((game,index) => {
                 if(index === gameId)
                     game = {...game, homeTeamScore: newHomeTeamScore, awayTeamScore: newAwayTeamScore}
@@ -42,6 +42,11 @@ const Scoreboard = ({scoreboard, setScoreBoard}) => {
         setEditGame(0)
         setNewHomeTeamScore('')
         setNewAwayTeamScore('')
+    }
+
+    const finishGame = (gameId) => {
+        const updatedScoreBoard = scoreboard.filter((item,index) => index !== gameId)
+        setScoreBoard(updatedScoreBoard)
     }
 
     //Render
@@ -89,6 +94,14 @@ const Scoreboard = ({scoreboard, setScoreBoard}) => {
                             disabled={newHomeTeamScore && newAwayTeamScore ? false : true}
                         >
                             Save Game
+                        </button>
+                        <button
+                            data-testid={`scoreboard_match_${i}_finish`}
+                            name={`scoreboard_match_${i}_save`}
+                            onClick={() => finishGame(i)}
+                            disabled={editGame ? true : false}
+                        >
+                            Finish Game
                         </button>
                     </div>
                 )
