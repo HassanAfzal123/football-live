@@ -11,6 +11,8 @@ describe('Add a new game', () => {
         cy.get('[data-testid="submitGame"]')
         .click();
 
-        cy.contains('Home Team 0 - Away Team 0');
+        // Using regex to match the string
+        let regex = new RegExp("Home Team" + "\s*0\s*-\s*" + "Away Team" + "\s*0");
+        cy.get('[data-testid="scoreboard"]').invoke('text').should('match', regex)
     });
 });
